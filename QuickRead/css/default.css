@@ -1,2 +1,29 @@
-﻿body {
+body {
+  margin: 0;
+  padding: 0;
+}
+#controlButtons {
+  top: 65%;
+  left: 50%;
+  margin-left: -200px;
+  position: fixed;
+  width: 400px;
+  height: 100px;
+}
+#controlButtons #flowButtons {
+  text-align: center;
+}
+#controlButtons #flowButtons #nextParagraph,
+#controlButtons #flowButtons #nextSentence,
+#controlButtons #flowButtons #previousParagraph,
+#controlButtons #flowButtons #previousSentence {
+  width: 70px;
+  min-width: 70px;
+}
+#controlButtons #speedButtons {
+  text-align: center;
+  margin-top: 20px;
+}
+.sr-reader {
+  width: 480px;
 }

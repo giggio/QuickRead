@@ -11,10 +11,24 @@
 
     <!-- QuickRead references -->
     <link href="js/lib/jetzt/jetzt.css" rel="stylesheet" />
-    <script src="js/lib/jetzt/jetzt.js"></script>
     <link href="/css/default.css" rel="stylesheet" />
-    <script src="/js/default.js"></script>
 </head>
-<body>
-</body>
+    <body>
+        <div id="controlButtons">
+            <div id="flowButtons">
+                <input type="button" value="|<" id="previousParagraph" />
+                <input type="button" value="<" id="previousSentence" />
+                <input type="button" value="Pause" id="toggleRunning" />
+                <input type="button" value=">" id="nextSentence" />
+                <input type="button" value=">|" id="nextParagraph" />
+            </div>
+            <div id="speedButtons">
+                <input type="button" value="Faster" id="faster" />
+                <input type="button" value="Slower" id="slower" />
+            </div>
+        </div>
+        <script src="js/lib/jetzt/jetzt.js"></script>
+        <script src="js/lib/jquery/dist/jquery.js"></script>
+        <script src="/js/default.js"></script>
+    </body>
 </html>

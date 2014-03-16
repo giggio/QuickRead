@@ -18,6 +18,7 @@
     "tests"
   ],
   "dependencies": {
-    "jetzt": "https://github.com/ds300/jetzt.git"
+    "jetzt": "https://github.com/ds300/jetzt.git",
+    "jquery": "~2.1.0"
   }
 }
