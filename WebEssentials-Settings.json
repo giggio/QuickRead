@@ -115,7 +115,7 @@
   "TypeScript": {
     "BraceCompletion": true,
     "LintOnBuild": false,
-    "LintOnSave": true,
+    "LintOnSave": false,
     "LintResultLocation": "Message",
     "ShowPreviewPane": true
   }
