@@ -13,9 +13,20 @@
 <body>
     <div id="content">
         <h1 id="header">Quick Read</h1>
-        <div id="urlBlock">
-            <input type="text" id="url" />
-            <input type="button" value="Get" id="doGetUrl" />
+        <div id="inputBlock">
+            <div id="urlBlock">
+                <p>Type a url:</p>
+                <input type="text" id="url" />
+                <input type="button" value="Get and read" id="doGetUrl" />
+            </div>
+            <p>or</p>
+            <div id="textBlock">
+                <p>Type some text:</p>
+                <textarea id="text"></textarea>
+                <div id="showTextHolder">
+                    <input type="button" value="Read" id="doShowText" />
+                </div>
+            </div>
             <p>You can also share from any app that produces content, like a web browser (Internet Explorer), or news reader.</p>
         </div>
         <div id="controlButtons" class="hide">

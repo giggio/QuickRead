@@ -8,7 +8,7 @@ declare var readability: any;
 
   function display(text) {
     $("#controlButtons").show();
-    $("#urlBlock").hide();
+    $("#inputBlock").hide();
     jetzt.config("target_wpm", 500);
     jetzt.adjustScale(-0.2);
     jetzt.init(text);
@@ -115,7 +115,7 @@ declare var readability: any;
 
   app.start();
 
-  $(()=> {
+  $(() => {
     $("#doGetUrl").click(() => {
       var url = $("#url").val().trim();
       var expressionWithHttp = '^(https?:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?';
@@ -132,8 +132,16 @@ declare var readability: any;
         getArticleFromUri("http://" + url).then(display);
       } else {
         messageDialog = new Windows.UI.Popups.MessageDialog("Please select an acceptable (starting with http, www, or at least a correct url).");
+        messageDialog.showAsync();
+      }
+    });
+    $("#doShowText").click(() => {
+      var text = $("#text").val().trim();
+      if (text === "") {
+        var messageDialog = new Windows.UI.Popups.MessageDialog("Please type some text.");
         return messageDialog.showAsync();
       }
+      display(text);
     });
   });
 

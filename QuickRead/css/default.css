@@ -2,8 +2,11 @@ body {
   margin: 0;
   padding: 0;
 }
+button {
+  font-family: 'Segoe UI Light';
+}
 #content {
-  top: 20%;
+  top: 50px;
   left: 50%;
   margin-left: -200px;
   position: fixed;
@@ -13,6 +16,19 @@ body {
 #content #header {
   width: 300px;
   /*margin-left: -20px;*/
+}
+#content #inputBlock #textBlock #text {
+  resize: vertical;
+  height: 200px;
+  width: 370px;
+}
+#content #inputBlock #textBlock #showTextHolder {
+  height: 32px;
+}
+#content #inputBlock #textBlock #showTextHolder #doShowText {
+  position: absolute;
+  right: 0;
+  margin-right: 0;
 }
 #content #controlButtons {
   margin-top: 200px;
@@ -37,7 +53,7 @@ body {
   width: 480px;
 }
 .sr-reader.in {
-  top: 40%;
+  top: 200px;
 }
 .hide {
   display: none;
