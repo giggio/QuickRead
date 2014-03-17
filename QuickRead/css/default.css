@@ -2,39 +2,53 @@ body {
   margin: 0;
   padding: 0;
 }
-#urlBlock {
-  top: 45%;
+#content {
+  top: 35%;
   left: 50%;
   margin-left: -200px;
   position: fixed;
   width: 400px;
-  height: 200px;
+  height: 600px;
 }
-#controlButtons {
-  top: 65%;
+#content #header {
+  width: 100%;
+}
+#content #controlButtons {
+  top: 55%;
   left: 50%;
   margin-left: -200px;
   position: fixed;
   width: 400px;
   height: 100px;
 }
-#controlButtons #flowButtons {
+#content #controlButtons #flowButtons {
   text-align: center;
 }
-#controlButtons #flowButtons #nextParagraph,
-#controlButtons #flowButtons #nextSentence,
-#controlButtons #flowButtons #previousParagraph,
-#controlButtons #flowButtons #previousSentence {
+#content #controlButtons #flowButtons #nextParagraph,
+#content #controlButtons #flowButtons #nextSentence,
+#content #controlButtons #flowButtons #previousParagraph,
+#content #controlButtons #flowButtons #previousSentence {
   width: 70px;
   min-width: 70px;
 }
-#controlButtons #speedButtons {
+#content #controlButtons #speedButtons {
   text-align: center;
   margin-top: 20px;
 }
 .sr-reader {
   width: 480px;
 }
+.sr-reader.in {
+  top: 40%;
+}
 .hide {
   display: none;
+}
+#forkme img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
 }

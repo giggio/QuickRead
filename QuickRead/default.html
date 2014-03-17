@@ -6,16 +6,15 @@
 
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
-    <!-- QuickRead references -->
     <link href="js/lib/jetzt/jetzt.css" rel="stylesheet" />
     <link href="/css/default.css" rel="stylesheet" />
 </head>
-    <body>
+<body>
+    <div id="content">
+        <h1 id="header">Quick Read</h1>
         <div id="urlBlock">
-            <input type="text" id="url"/>
+            <input type="text" id="url" />
             <input type="button" value="Get" id="doGetUrl" />
             <p>You can also share from any app that produces content, like a web browser (Internet Explorer), or news reader.</p>
         </div>
@@ -32,8 +31,12 @@
                 <input type="button" value="Faster" id="faster" />
             </div>
         </div>
-        <script src="js/lib/jetzt/jetzt.js"></script>
-        <script src="js/lib/jquery/dist/jquery.js"></script>
-        <script src="/js/default.js"></script>
-    </body>
+    </div>
+    <a href="https://github.com/giggio/QuickRead" id="forkme"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="js/lib/jetzt/jetzt.js"></script>
+    <script src="js/lib/jquery/dist/jquery.js"></script>
+    <script src="/js/default.js"></script>
+</body>
 </html>
