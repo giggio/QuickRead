@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0;
   padding: 0;
 }
@@ -52,10 +52,10 @@ button {
 #content #newTextHolder {
   text-align: center;
 }
-.sr-reader {
+.sr-reader-wrapper {
   width: 480px;
 }
-.sr-reader.in {
+.sr-reader-wrapper.in {
   top: 200px;
 }
 .hide {

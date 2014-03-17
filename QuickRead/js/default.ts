@@ -9,28 +9,28 @@ declare var readability: any;
     $(this).remove();
   };
 
-  jetzt.adjustScale(-0.2);
+  jetzt.config.adjustScale(-0.2);
 
   function display(text:string, isShare = false) {
     $("#controlButtons").show();
     $("#inputBlock").hide();
     if (!isShare) $("#newText").show();
     jetzt.config("target_wpm", 500);
-    jetzt.init(text);
+    jetzt.init(jetzt.parse.string(text));
     $(".sr-blackout").hide();
     $("#toggleRunning").click(function () {
       var running = this.value === "Pause";
       this.value = running ? "Play" : "Pause";
-      jetzt.toggleRunning(!running);
+      jetzt.exec.toggleRunning(!running);
     });
-    $("#nextParagraph").click(jetzt.nextParagraph);
-    $("#nextSentence").click(jetzt.nextSentence);
-    $("#previousParagraph").click(jetzt.prevParagraph);
-    $("#previousSentence").click(jetzt.prevSentence);
-    $("#faster").click(() => jetzt.adjustWPM(10));
-    $("#slower").click(() => jetzt.adjustWPM(-10));
-    $("#smaller").click(() => jetzt.adjustScale(-0.1));
-    $("#larger").click(() => jetzt.adjustScale(0.1));
+    $("#nextParagraph").click(jetzt.exec.nextParagraph);
+    $("#nextSentence").click(jetzt.exec.nextSentence);
+    $("#previousParagraph").click(jetzt.exec.prevParagraph);
+    $("#previousSentence").click(jetzt.exec.prevSentence);
+    $("#faster").click(() => jetzt.config.adjustWPM(10));
+    $("#slower").click(() => jetzt.config.adjustWPM(-10));
+    $("#smaller").click(() => jetzt.config.adjustScale(-0.1));
+    $("#larger").click(() => jetzt.config.adjustScale(0.1));
   }
   function getInformationOnlineError(e) {
     var messageDialog = new Windows.UI.Popups.MessageDialog("An error ocurred when getting the text, please try again later. You are probably without connectivity with the internet.");
@@ -154,7 +154,7 @@ declare var readability: any;
       display(text);
     });
     $("#newText").click(() => {
-      jetzt.close();
+      if (jetzt.isOpen()) jetzt.quit();
       $("#controlButtons").hide();
       $("#inputBlock").show();
       $("#newText").hide();

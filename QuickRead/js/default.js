@@ -8,7 +8,7 @@
         $(this).remove();
     };
 
-    jetzt.adjustScale(-0.2);
+    jetzt.config.adjustScale(-0.2);
 
     function display(text, isShare) {
         if (typeof isShare === "undefined") { isShare = false; }
@@ -17,28 +17,28 @@
         if (!isShare)
             $("#newText").show();
         jetzt.config("target_wpm", 500);
-        jetzt.init(text);
+        jetzt.init(jetzt.parse.string(text));
         $(".sr-blackout").hide();
         $("#toggleRunning").click(function () {
             var running = this.value === "Pause";
             this.value = running ? "Play" : "Pause";
-            jetzt.toggleRunning(!running);
+            jetzt.exec.toggleRunning(!running);
         });
-        $("#nextParagraph").click(jetzt.nextParagraph);
-        $("#nextSentence").click(jetzt.nextSentence);
-        $("#previousParagraph").click(jetzt.prevParagraph);
-        $("#previousSentence").click(jetzt.prevSentence);
+        $("#nextParagraph").click(jetzt.exec.nextParagraph);
+        $("#nextSentence").click(jetzt.exec.nextSentence);
+        $("#previousParagraph").click(jetzt.exec.prevParagraph);
+        $("#previousSentence").click(jetzt.exec.prevSentence);
         $("#faster").click(function () {
-            return jetzt.adjustWPM(10);
+            return jetzt.config.adjustWPM(10);
         });
         $("#slower").click(function () {
-            return jetzt.adjustWPM(-10);
+            return jetzt.config.adjustWPM(-10);
         });
         $("#smaller").click(function () {
-            return jetzt.adjustScale(-0.1);
+            return jetzt.config.adjustScale(-0.1);
         });
         $("#larger").click(function () {
-            return jetzt.adjustScale(0.1);
+            return jetzt.config.adjustScale(0.1);
         });
     }
     function getInformationOnlineError(e) {
@@ -164,7 +164,8 @@
             display(text);
         });
         $("#newText").click(function () {
-            jetzt.close();
+            if (jetzt.isOpen())
+                jetzt.quit();
             $("#controlButtons").hide();
             $("#inputBlock").show();
             $("#newText").hide();

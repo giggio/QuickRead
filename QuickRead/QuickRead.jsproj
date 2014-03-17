@@ -76,6 +76,15 @@
     <Content Include="js\lib\jetzt\.bower.json" />
     <Content Include="js\lib\jetzt\jetzt.css" />
     <Content Include="js\lib\jetzt\jetzt.js" />
+    <Content Include="js\lib\jetzt\modules\config.js" />
+    <Content Include="js\lib\jetzt\modules\control.js" />
+    <Content Include="js\lib\jetzt\modules\exec.js" />
+    <Content Include="js\lib\jetzt\modules\helpers.js" />
+    <Content Include="js\lib\jetzt\modules\init.js" />
+    <Content Include="js\lib\jetzt\modules\parse.js" />
+    <Content Include="js\lib\jetzt\modules\preamble.js" />
+    <Content Include="js\lib\jetzt\modules\select.js" />
+    <Content Include="js\lib\jetzt\modules\view.js" />
     <Content Include="js\lib\jquery\bower.json" />
     <Content Include="js\lib\jquery\dist\jquery.js" />
     <Content Include="js\typings\jetzt\jetzt.d.ts" />
