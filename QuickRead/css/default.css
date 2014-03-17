@@ -2,6 +2,14 @@ body {
   margin: 0;
   padding: 0;
 }
+#urlBlock {
+  top: 45%;
+  left: 50%;
+  margin-left: -200px;
+  position: fixed;
+  width: 400px;
+  height: 200px;
+}
 #controlButtons {
   top: 65%;
   left: 50%;
@@ -26,4 +34,7 @@ body {
 }
 .sr-reader {
   width: 480px;
+}
+.hide {
+  display: none;
 }
