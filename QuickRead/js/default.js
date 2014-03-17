@@ -41,6 +41,10 @@
             return jetzt.adjustScale(0.1);
         });
     }
+    function getInformationOnlineError(e) {
+        var messageDialog = new Windows.UI.Popups.MessageDialog("An error ocurred when getting the text, please try again later. You are probably without connectivity with the internet.");
+        messageDialog.showAsync();
+    }
     function getArticleFromUri(uri) {
         return WinJS.xhr({
             type: 'get',
@@ -65,6 +69,8 @@
         }).then(function (articleText) {
             display(articleText, true);
             shareOperation.reportDataRetrieved();
+        }, function (e) {
+            return shareOperation.reportError("An error ocurred when trying to go to the internet to get your article. You can still try to select the text so we don't have to go the internet to parse it, and it will work without internet connectivity.");
         });
     }
 
@@ -141,9 +147,9 @@
                 messageDialog = new Windows.UI.Popups.MessageDialog("Please type a url, starting with http.");
                 return messageDialog.showAsync();
             } else if (url.match(regexWithHttp)) {
-                getArticleFromUri(url).then(display);
+                getArticleFromUri(url).then(display, getInformationOnlineError);
             } else if (url.match(regexWithoutHttp)) {
-                getArticleFromUri("http://" + url).then(display);
+                getArticleFromUri("http://" + url).then(display, getInformationOnlineError);
             } else {
                 messageDialog = new Windows.UI.Popups.MessageDialog("Please select an acceptable (starting with http, www, or at least a correct url).");
                 messageDialog.showAsync();
