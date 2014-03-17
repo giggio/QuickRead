@@ -3,7 +3,7 @@
   <Identity Name="0ac42484-ede5-4515-b650-b458b0a2c973" Version="1.0.0.0" Publisher="CN=Giovanni" />
   <Properties>
     <DisplayName>QuickRead</DisplayName>
-    <PublisherDisplayName>Giovanni</PublisherDisplayName>
+    <PublisherDisplayName>Lambda3</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,7 +15,13 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="QuickRead" Description="QuickRead" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
+      <m2:VisualElements DisplayName="QuickRead" Description="QuickRead is an app that allows you to read quickly without moving your eyes. With QuickRead you can read 5 times faster than you normally would. It allows you to share content from other applications, like web browsers or news readers. It is based on the Jetzt browser extension (https://github.com/ds300/jetzt), which is itself inspired on Spritz." ForegroundText="light" BackgroundColor="#000000" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="false">
+        <m2:DefaultTile Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" ShortName="QuickRead">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="square310x310Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
         <m2:SplashScreen Image="images\splashscreen.png" />
       </m2:VisualElements>
       <Extensions>
