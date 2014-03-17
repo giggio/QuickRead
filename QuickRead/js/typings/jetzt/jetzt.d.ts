@@ -6,6 +6,7 @@
   nextSentence(): void;
   prevParagraph(): void;
   prevSentence(): void;
-  adjustWPM(words:number);
+  adjustWPM(words:number):void;
+  adjustScale(diff:number):void;
 }
 declare var jetzt: jetztStatic;

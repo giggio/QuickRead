@@ -10,6 +10,7 @@ declare var readability: any;
     $("#controlButtons").show();
     $("#urlBlock").hide();
     jetzt.config("target_wpm", 500);
+    jetzt.adjustScale(-0.3);
     jetzt.init(text);
     $(".sr-blackout").hide();
     $("#toggleRunning").click(function () {
