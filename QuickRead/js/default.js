@@ -9,7 +9,7 @@
         $("#controlButtons").show();
         $("#urlBlock").hide();
         jetzt.config("target_wpm", 500);
-        jetzt.adjustScale(-0.3);
+        jetzt.adjustScale(-0.2);
         jetzt.init(text);
         $(".sr-blackout").hide();
         $("#toggleRunning").click(function () {
@@ -26,6 +26,12 @@
         });
         $("#slower").click(function () {
             return jetzt.adjustWPM(-10);
+        });
+        $("#smaller").click(function () {
+            return jetzt.adjustScale(-0.1);
+        });
+        $("#larger").click(function () {
+            return jetzt.adjustScale(0.1);
         });
     }
     function getArticleFromUri(uri) {

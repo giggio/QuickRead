@@ -10,7 +10,7 @@ declare var readability: any;
     $("#controlButtons").show();
     $("#urlBlock").hide();
     jetzt.config("target_wpm", 500);
-    jetzt.adjustScale(-0.3);
+    jetzt.adjustScale(-0.2);
     jetzt.init(text);
     $(".sr-blackout").hide();
     $("#toggleRunning").click(function () {
@@ -24,6 +24,8 @@ declare var readability: any;
     $("#previousSentence").click(jetzt.prevSentence);
     $("#faster").click(() => jetzt.adjustWPM(10));
     $("#slower").click(() => jetzt.adjustWPM(-10));
+    $("#smaller").click(() => jetzt.adjustScale(-0.1));
+    $("#larger").click(() => jetzt.adjustScale(0.1));
   }
   function getArticleFromUri(uri: string) :  Windows.Foundation.IPromise<string> {
     return WinJS.xhr({
