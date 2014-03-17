@@ -49,6 +49,9 @@ button {
   text-align: center;
   margin-top: 20px;
 }
+#content #newTextHolder {
+  text-align: center;
+}
 .sr-reader {
   width: 480px;
 }

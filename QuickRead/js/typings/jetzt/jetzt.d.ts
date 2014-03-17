@@ -8,5 +8,7 @@
   prevSentence(): void;
   adjustWPM(words:number):void;
   adjustScale(diff:number):void;
+  close(): void;
+  DEFAULT_OPTIONS: Object;
 }
 declare var jetzt: jetztStatic;

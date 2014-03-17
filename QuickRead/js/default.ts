@@ -5,12 +5,17 @@
 declare var readability: any;
 (() => {
   "use strict";
+  HTMLElement.prototype.remove = function remove() {
+    $(this).remove();
+  };
 
-  function display(text) {
+  jetzt.adjustScale(-0.2);
+
+  function display(text, isShare = false) {
     $("#controlButtons").show();
     $("#inputBlock").hide();
+    if (!isShare) $("#newText").show();
     jetzt.config("target_wpm", 500);
-    jetzt.adjustScale(-0.2);
     jetzt.init(text);
     $(".sr-blackout").hide();
     $("#toggleRunning").click(function () {
@@ -40,7 +45,7 @@ declare var readability: any;
 
   function doShareWithPlainText(shareOperation: Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation): Windows.Foundation.IPromise<any> {
     return shareOperation.data.getTextAsync().then(text=> {
-      display(text);
+      display(text, true);
       shareOperation.reportDataRetrieved();
     });
   }
@@ -49,7 +54,7 @@ declare var readability: any;
     return shareOperation.data.getUriAsync()
       .then(uri=> getArticleFromUri(uri.absoluteUri))
       .then(articleText => {
-        display(articleText);
+        display(articleText, true);
         shareOperation.reportDataRetrieved();
       });
   }
@@ -63,7 +68,7 @@ declare var readability: any;
         var el = document.createElement("div");
         el.innerHTML = htmlFragment;
         var text = el.textContent;
-        display(text);
+        display(text, true);
       }
     });
   }
@@ -142,6 +147,12 @@ declare var readability: any;
         return messageDialog.showAsync();
       }
       display(text);
+    });
+    $("#newText").click(() => {
+      jetzt.close();
+      $("#controlButtons").hide();
+      $("#inputBlock").show();
+      $("#newText").hide();
     });
   });
 

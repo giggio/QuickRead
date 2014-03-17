@@ -17,7 +17,7 @@
             <div id="urlBlock">
                 <p>Type a url:</p>
                 <input type="text" id="url" />
-                <input type="button" value="Get and read" id="doGetUrl" />
+                <input type="button" value="Get and read" id="doGetUrl" title="http://... or www..."/>
             </div>
             <p>or</p>
             <div id="textBlock">
@@ -27,7 +27,6 @@
                     <input type="button" value="Read" id="doShowText" />
                 </div>
             </div>
-            <p>You can also share from any app that produces content, like a web browser (Internet Explorer), or news reader.</p>
         </div>
         <div id="controlButtons" class="hide">
             <div id="flowButtons">
@@ -44,6 +43,10 @@
                 <input type="button" value="Larger" id="larger" />
             </div>
         </div>
+        <div id="newTextHolder">
+            <input type="button" value="Enter new text or new web page" id="newText" class="hide" />
+        </div>
+        <p><strong>Tip:</strong> You can also share from any app that produces content, like a web browser (Internet Explorer), or news reader.</p>
     </div>
     <a href="https://github.com/giggio/QuickRead" id="forkme"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>

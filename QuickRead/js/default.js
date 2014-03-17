@@ -4,12 +4,19 @@
 /// <reference path="typings/jetzt/jetzt.d.ts" />
 (function () {
     "use strict";
+    HTMLElement.prototype.remove = function remove() {
+        $(this).remove();
+    };
 
-    function display(text) {
+    jetzt.adjustScale(-0.2);
+
+    function display(text, isShare) {
+        if (typeof isShare === "undefined") { isShare = false; }
         $("#controlButtons").show();
         $("#inputBlock").hide();
+        if (!isShare)
+            $("#newText").show();
         jetzt.config("target_wpm", 500);
-        jetzt.adjustScale(-0.2);
         jetzt.init(text);
         $(".sr-blackout").hide();
         $("#toggleRunning").click(function () {
@@ -47,7 +54,7 @@
 
     function doShareWithPlainText(shareOperation) {
         return shareOperation.data.getTextAsync().then(function (text) {
-            display(text);
+            display(text, true);
             shareOperation.reportDataRetrieved();
         });
     }
@@ -56,7 +63,7 @@
         return shareOperation.data.getUriAsync().then(function (uri) {
             return getArticleFromUri(uri.absoluteUri);
         }).then(function (articleText) {
-            display(articleText);
+            display(articleText, true);
             shareOperation.reportDataRetrieved();
         });
     }
@@ -70,7 +77,7 @@
                 var el = document.createElement("div");
                 el.innerHTML = htmlFragment;
                 var text = el.textContent;
-                display(text);
+                display(text, true);
             }
         });
     }
@@ -149,6 +156,12 @@
                 return messageDialog.showAsync();
             }
             display(text);
+        });
+        $("#newText").click(function () {
+            jetzt.close();
+            $("#controlButtons").hide();
+            $("#inputBlock").show();
+            $("#newText").hide();
         });
     });
 })();
