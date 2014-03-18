@@ -1,4 +1,4 @@
-/// <reference path="typings/jetzt/jetzt.d.ts" />
+﻿/// <reference path="typings/jetzt/jetzt.d.ts" />
 (function (window) {
     var jetzt = window.jetzt, reader = jetzt.view.reader;
 
