@@ -74,9 +74,11 @@
     <Content Include="js\default.js" />
     <Content Include="js\default.js.map" />
     <Content Include="js\default.ts" />
+    <Content Include="js\jetztInit.js" />
+    <Content Include="js\jetztInit.js.map" />
+    <Content Include="js\jetztInit.ts" />
     <Content Include="js\lib\jetzt\.bower.json" />
     <Content Include="js\lib\jetzt\jetzt.css" />
-    <Content Include="js\lib\jetzt\jetzt.js" />
     <Content Include="js\lib\jetzt\modules\config.js" />
     <Content Include="js\lib\jetzt\modules\control.js" />
     <Content Include="js\lib\jetzt\modules\exec.js" />

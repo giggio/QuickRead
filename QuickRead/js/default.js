@@ -2,6 +2,7 @@
 /// <reference path="typings/jquery/jquery.d.ts" />
 /// <reference path="typings/patches.d.ts" />
 /// <reference path="typings/jetzt/jetzt.d.ts" />
+/// <reference path="jetztInit.ts" />
 (function () {
     "use strict";
     HTMLElement.prototype.remove = function remove() {
@@ -17,17 +18,25 @@
         if (!isShare)
             $("#newText").show();
         jetzt.config("target_wpm", 500);
-        jetzt.init(jetzt.parse.string(text));
+        var executor = jetzt.init2(jetzt.parse.string(text));
         $(".sr-blackout").hide();
         $("#toggleRunning").click(function () {
             var running = this.value === "Pause";
             this.value = running ? "Play" : "Pause";
-            jetzt.exec.toggleRunning(!running);
+            executor.toggleRunning(!running);
         });
-        $("#nextParagraph").click(jetzt.exec.nextParagraph);
-        $("#nextSentence").click(jetzt.exec.nextSentence);
-        $("#previousParagraph").click(jetzt.exec.prevParagraph);
-        $("#previousSentence").click(jetzt.exec.prevSentence);
+        $("#nextParagraph").click(function () {
+            return executor.nextParagraph();
+        });
+        $("#nextSentence").click(function () {
+            return executor.nextSentence();
+        });
+        $("#previousParagraph").click(function () {
+            return executor.prevParagraph();
+        });
+        $("#previousSentence").click(function () {
+            return executor.prevSentence();
+        });
         $("#faster").click(function () {
             return jetzt.config.adjustWPM(10);
         });

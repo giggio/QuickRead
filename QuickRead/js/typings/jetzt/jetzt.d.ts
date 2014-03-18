@@ -3,6 +3,7 @@
   adjustScale(diff:number):void;
   adjustWPM(words:number):void;
   DEFAULT_OPTIONS: Object;
+  onChange(cb:()=>any):void;
 }
 interface jetztExec {
   toggleRunning(run: boolean);
@@ -14,12 +15,13 @@ interface jetztExec {
 interface jetztParse {
   string(text:string):string;
 }
-interface jetztStatic {
+interface jetzt {
   config:jetztConfig;
-  exec:jetztExec;
+  exec(instructions):jetztExec;
   parse:jetztParse;
   init(text: string);
+  init2(text: string):jetztExec;
   quit(): void;
   isOpen():boolean;
 }
-declare var jetzt: jetztStatic;
+declare var jetzt: jetzt;

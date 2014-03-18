@@ -2,6 +2,7 @@
 /// <reference path="typings/jquery/jquery.d.ts" />
 /// <reference path="typings/patches.d.ts" />
 /// <reference path="typings/jetzt/jetzt.d.ts" />
+/// <reference path="jetztInit.ts" />
 declare var readability: any;
 (() => {
   "use strict";
@@ -16,17 +17,17 @@ declare var readability: any;
     $("#inputBlock").hide();
     if (!isShare) $("#newText").show();
     jetzt.config("target_wpm", 500);
-    jetzt.init(jetzt.parse.string(text));
+    var executor = jetzt.init2(jetzt.parse.string(text));
     $(".sr-blackout").hide();
     $("#toggleRunning").click(function () {
       var running = this.value === "Pause";
       this.value = running ? "Play" : "Pause";
-      jetzt.exec.toggleRunning(!running);
+      executor.toggleRunning(!running);
     });
-    $("#nextParagraph").click(jetzt.exec.nextParagraph);
-    $("#nextSentence").click(jetzt.exec.nextSentence);
-    $("#previousParagraph").click(jetzt.exec.prevParagraph);
-    $("#previousSentence").click(jetzt.exec.prevSentence);
+    $("#nextParagraph").click(() => executor.nextParagraph());
+    $("#nextSentence").click(() => executor.nextSentence());
+    $("#previousParagraph").click(() => executor.prevParagraph());
+    $("#previousSentence").click(() => executor.prevSentence());
     $("#faster").click(() => jetzt.config.adjustWPM(10));
     $("#slower").click(() => jetzt.config.adjustWPM(-10));
     $("#smaller").click(() => jetzt.config.adjustScale(-0.1));
