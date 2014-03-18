@@ -111,6 +111,12 @@ declare var readability: any;
         // Restore application state here.
       }
       args.setPromise(WinJS.UI.processAll());
+      WinJS.Application.onsettings = e => {
+        e.detail.applicationcommands = {
+          "privacyPolicyDiv": { href: "privacyPolicy.html", title: "Privacy Policy" }
+        };
+        WinJS.UI.SettingsFlyout.populateSettings(e);
+      };
     }
   };
 

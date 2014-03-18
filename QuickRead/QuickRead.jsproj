@@ -72,6 +72,7 @@
     <Content Include="css\default.less" />
     <Content Include="images\Wide310x150Logo.scale-100.png" />
     <Content Include="js\default.js" />
+    <Content Include="js\default.js.map" />
     <Content Include="js\default.ts" />
     <Content Include="js\lib\jetzt\.bower.json" />
     <Content Include="js\lib\jetzt\jetzt.css" />
@@ -95,6 +96,7 @@
     <Content Include="js\typings\winrt\winrt.d.ts" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="QuickRead_StoreKey.pfx" />
+    <Content Include="privacyPolicy.html" />
     <Content Include="tsd.json" />
     <Content Include="tslint.json" />
     <None Include="QuickRead_TemporaryKey.pfx" />

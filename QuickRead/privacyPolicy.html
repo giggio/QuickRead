@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Help Settings flyout</title>
+</head>
+<body>
+    <div id="privacyPolicyDiv" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Help Settings flyout"
+         data-win-options="{settingsCommandId:'privacyPolicy',width:'narrow'}">
+        <div class="win-header" style="background-color:#000000">
+            <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+            <div class="win-label">Privacy Policy</div>
+            <img src="ms-appx:///images/smalllogo.scale-100.png" style="position: absolute; right: 40px;" />
+        </div>
+        <div class="win-content">
+            The application keeps no record of what the user does whatsoever and does not disclose it to anyone.
+            It also does not identify the user in any way.
+            It does send urls to the internet to a third party service to be parsed and extract articles, in an anonymous way.
+            It does not share any of your personal information or identify you in any way.
+        </div>
+    </div>
+</body>
+</html>
