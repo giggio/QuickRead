@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="Lambda3.QuickRead" Version="1.1.0.0" Publisher="CN=B9B97D75-0150-4609-BF6A-1E0E35E664C8" />
+  <Identity Name="Lambda3.QuickRead" Version="1.1.0.1" Publisher="CN=B9B97D75-0150-4609-BF6A-1E0E35E664C8" />
   <Properties>
     <DisplayName>QuickRead</DisplayName>
     <PublisherDisplayName>Lambda3</PublisherDisplayName>
