@@ -11,7 +11,9 @@ To be developed.
 
 ## Windows Store instalation:
 
-The app will be available on the windows store.
+The app is available in the Windows Store at this address: [http://apps.microsoft.com/windows/en-us/app/1ce37353-16d5-47a4-b9c6-577703004b59](http://apps.microsoft.com/windows/en-us/app/1ce37353-16d5-47a4-b9c6-577703004b59). You can also search for "QuickRead" on the app store.
+
+The version for the Brazilian store is here: [http://apps.microsoft.com/windows/pt-br/app/1ce37353-16d5-47a4-b9c6-577703004b59](http://apps.microsoft.com/windows/pt-br/app/1ce37353-16d5-47a4-b9c6-577703004b59).
 
 ## Support
 
